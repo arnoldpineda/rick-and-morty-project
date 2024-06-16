@@ -1,0 +1,29 @@
+{
+  "name": "rick-and-morty-migration",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "migration:create": "sequelize-cli migration:create",
+    "seeder:generate": "sequelize-cli seed:generate",
+    "seed": "dotenv -- sequelize-cli db:seed:all",
+    "seed:undo": "dotenv -- sequelize-cli db:seed:undo",
+    "migrate": "dotenv -- sequelize-cli db:migrate",
+    "migrate:rollback": "dotenv -- sequelize-cli db:migrate:undo"
+  },
+  "keywords": [],
+  "author": "Arnold Pineda",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "8.2.0",
+    "eslint": "8.46.0",
+    "eslint-config-prettier": "8.9.0",
+    "prettier": "3.0.0"
+  },
+  "dependencies": {
+    "dotenv-cli": "7.3.0",
+    "mysql2": "3.5.2",
+    "sequelize": "6.32.1",
+    "sequelize-cli": "6.6.2"
+  }
+}

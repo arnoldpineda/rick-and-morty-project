@@ -1,8 +1,8 @@
 import createApp from './app';
-import { config } from './config/config';
+import { envManager } from './config/envManager';
 
 const app = createApp();
 
-app.listen(config.port, () => {
-  console.log(`Server running on port ${config.port}`);
+app.listen(envManager.port, () => {
+  console.log(`Server running on port ${envManager.port}`);
 });
