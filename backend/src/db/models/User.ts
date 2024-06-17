@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, CreatedAt, UpdatedAt, Index } from 'sequelize-typescript';
-import { UserAttributes } from '../../interfaces/interfaces';
+import { UserAttributes } from '../../interfaces/attributes';
 
 @Table({
   timestamps: true,

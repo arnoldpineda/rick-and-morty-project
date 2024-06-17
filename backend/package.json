@@ -11,12 +11,14 @@
   "author": "Arnold Pineda",
   "license": "ISC",
   "dependencies": {
+    "@graphql-tools/utils": "^10.2.2",
     "apollo-server-express": "3.13.0",
     "axios": "^1.7.2",
     "dotenv": "16.4.5",
     "express": "4.19.2",
     "express-graphql": "0.12.0",
     "graphql": "16.8.2",
+    "graphql-tools": "^4.0.8",
     "morgan": "1.10.0",
     "mysql2": "3.10.1",
     "node-cron": "^3.0.3",
@@ -24,6 +26,7 @@
     "reflect-metadata": "^0.2.2",
     "sequelize": "6.37.3",
     "sequelize-typescript": "2.1.6",
+    "type-graphql": "^0.17.6",
     "winston": "3.13.0",
     "winston-daily-rotate-file": "5.0.0"
   },

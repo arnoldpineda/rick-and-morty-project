@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, CreatedAt, UpdatedAt, Index, HasMany } from 'sequelize-typescript';
-import { SpecieAttributes } from '../../interfaces/interfaces';
+import { SpecieAttributes } from '../../interfaces/attributes';
 import Character from './Character';
 
 @Table({

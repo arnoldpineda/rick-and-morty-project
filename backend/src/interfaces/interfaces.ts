@@ -1,44 +1,34 @@
-export interface CharacterAttributes {
-  id?: number;
-  name: string;
-  status: string;
-  speciesId: number;
-  gender: string;
-  origin: string;
-  image: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-  deletedAt?: Date | null;
+import { IResolvers } from '@graphql-tools/utils';
+import { SpecieAttributes, CharacterAttributes } from './attributes';
+
+export interface Resolvers extends IResolvers {
+  Query: QueryResolvers;
+  Mutation: MutationResolvers;
+  Specie: SpecieResolvers;
+  Character: CharacterResolvers;
 }
 
-export interface SpecieAttributes {
-  id?: number;
-  name: string;
-  createdAt?: Date;
-  updatedAt?: Date;
+interface QueryResolvers {
 }
 
-export interface UserAttributes {
-  id?: number;
-  username: string;
-  password: string;
-  createdAt?: Date;
-  updatedAt?: Date;
+interface MutationResolvers {
 }
 
-export interface CommentAttributes {
-  id?: number;
-  userId: number;
-  characterId: number;
-  content: string;
-  createdAt?: Date;
-  updatedAt?: Date;
+interface SpecieResolvers extends Record<string, any>{
+  characters: (parent: SpecieAttributes) => Promise<CharacterAttributes[]>;
+  species: () => Promise<SpecieAttributes[]>;
+  specie: (parent: any, args: { id: string }) => Promise<SpecieAttributes | null>;
 }
 
-export interface FavoriteAttributes {
-  id?: number;
-  userId: number;
-  characterId: number;
-  createdAt?: Date;
-  updatedAt?: Date;
+interface CharacterResolvers extends Record<string, any> {
+  characters: (parent: any, args: CharacterFilterArgs) => Promise<CharacterAttributes[]>;
+  character: (parent: any, args: { id: string }) => Promise<CharacterAttributes | null>;
+  specie: (parent: CharacterAttributes) => Promise<SpecieAttributes | null>;
+}
+
+interface CharacterFilterArgs {
+  status?: string;
+  speciesId?: number;
+  gender?: string;
+  origin?: string;
 }

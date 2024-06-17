@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey, BelongsTo, Index, CreatedAt, UpdatedAt } from 'sequelize-typescript';
-import { CommentAttributes } from '../../interfaces/interfaces';
+import { CommentAttributes } from '../../interfaces/attributes';
 import Character from './Character';
 import User from './User';
 

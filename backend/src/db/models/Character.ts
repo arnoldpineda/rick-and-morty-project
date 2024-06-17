@@ -1,5 +1,5 @@
-import { Table, Column, Model, DataType, CreatedAt, UpdatedAt, ForeignKey, DeletedAt, Index } from 'sequelize-typescript';
-import { CharacterAttributes } from '../../interfaces/interfaces';
+import { Table, Column, Model, DataType, CreatedAt, UpdatedAt, ForeignKey, DeletedAt, Index, BelongsTo } from 'sequelize-typescript';
+import { CharacterAttributes } from '../../interfaces/attributes';
 import Specie from './Specie';
 
 @Table({
@@ -34,6 +34,9 @@ export default class Character extends Model<CharacterAttributes> {
     allowNull: false,
   })
   declare speciesId: number;
+
+  @BelongsTo(() => Specie)
+  declare species: Specie;
 
   @Index
   @Column({

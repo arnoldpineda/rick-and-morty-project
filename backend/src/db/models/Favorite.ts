@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey, BelongsTo, Index, CreatedAt, UpdatedAt } from 'sequelize-typescript';
-import { FavoriteAttributes } from '../../interfaces/interfaces';
+import { FavoriteAttributes } from '../../interfaces/attributes';
 import User from './User';
 import Character from './Character';
 
