@@ -6,10 +6,14 @@
 - Typescript
 - Express
 - MySQL
+- Redis
+- GraphQL
 
 ## Frontend
 - React 18
+- React Router DOM
 - TailwindCSS
+- GraphQL
 
 
 ## Install
